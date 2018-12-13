@@ -12,7 +12,6 @@ export default function indexOfArray(arr, key, value) {
         if (typeof item !== "object") {
             idx = arr.indexOf(value);
         } else {
-			
 			if (item[key] === value) {
 				idx = index;
 			}

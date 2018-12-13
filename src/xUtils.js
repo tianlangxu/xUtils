@@ -4,7 +4,9 @@ import handlePrams from './lib/handlePrams';
 import indexOfArray from './lib/indexOfArray';
 import getType from './lib/getType';
 import formDonwloadExcelFile from './lib/formDonwloadExcelFile';
-import parseParams from './lib/parseParams'
+import parseParams from './lib/parseParams';
+import modifyParams from './lib/modifyParams';
+import modifyParamsSrc from './lib/modifyParamsSrc';
 
 export default {
     deepArrayUpdateKey,
@@ -13,5 +15,7 @@ export default {
     indexOfArray,
     formDonwloadExcelFile,
     getType,
-    parseParams
+    parseParams,
+    modifyParams,
+    modifyParamsSrc,
 }

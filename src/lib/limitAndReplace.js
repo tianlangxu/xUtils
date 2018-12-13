@@ -3,7 +3,7 @@
  * @param {String} str 原字符串 
  * @param {int} start 开始计算位置，默认为0  字符串下标 
  * @param {int} max 限制的最大长度，默认为原字符串的长度 从开始位置起数个数
- * @params {int} end 保留后面的文字   从后数个数
+ * @param {int} end 保留后面的文字   从后数个数
  * @param {String} fileterStr 替换的字符串，默认为...
  */
 export default function limitAndReplace({

@@ -16,6 +16,6 @@ export default function parseParams(url) {
 		}
 		return params;
 	} else {
-		return url;
+		return {};
 	}
 }

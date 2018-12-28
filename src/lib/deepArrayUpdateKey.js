@@ -1,5 +1,3 @@
-
-
 /**
  * 深入修改数组中对象的属性key值
  * @param {Array} arr 需要修改的数组
@@ -10,9 +8,9 @@
 export default function deepArrayUpdateKey(arr, key, updateKey) {
     var len = arr.length;
 
-    if (len > 0){
-        arr = arr.map(function (item){
-            if (item[key]){
+    if (len > 0) {
+        arr = arr.map(function (item) {
+            if (item[key]) {
                 // 如果存在，则换成新key
                 item[updateKey] = item[key];
                 delete item[key];

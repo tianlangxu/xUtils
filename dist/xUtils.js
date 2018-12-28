@@ -1299,6 +1299,47 @@
         }
     }
 
+    /**
+     * 根据正则或者字符串获取对象中的key值
+     * @param {Object} obj 对象
+     * @param {String || RegExp} express 字符串或正则表达式
+     * @param {Boolean} 是否全局匹配,针对字符串
+     * @retruns {Array} 对象key的集合
+     */
+    function queryObjKey(obj, express) {
+      var isGloab = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      var theKey = [];
+      if (!express) {
+        return theKey;
+      }
+
+      // 如果是普通字符串  String
+      if (getType(express) === 'String') {
+        _Object$keys(obj).forEach(function (item) {
+          if (isGloab) {
+            if (item === express) {
+              theKey.push(item);
+            }
+          } else {
+            if (item.startsWith(express)) {
+              theKey.push(item);
+            }
+          }
+        });
+      }
+      // 如果是正则表达式  RegExp
+      if (getType(express) === 'RegExp') {
+        _Object$keys(obj).forEach(function (item) {
+          var matchRes = item.match(express);
+          if (matchRes && matchRes.length > 0) {
+            theKey.push(item);
+          }
+        });
+      }
+      return theKey;
+    }
+
     var xUtils = {
         deepArrayUpdateKey: deepArrayUpdateKey,
         limitAndReplace: limitAndReplace,
@@ -1308,7 +1349,8 @@
         getType: getType,
         parseParams: parseParams,
         modifyParams: modifyParams,
-        modifyParamsSrc: modifyParamsSrc
+        modifyParamsSrc: modifyParamsSrc,
+        queryObjKey: queryObjKey
     };
 
     return xUtils;

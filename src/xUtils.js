@@ -7,6 +7,7 @@ import formDonwloadExcelFile from './lib/formDonwloadExcelFile';
 import parseParams from './lib/parseParams';
 import modifyParams from './lib/modifyParams';
 import modifyParamsSrc from './lib/modifyParamsSrc';
+import queryObjKey from './lib/queryObjKey';
 
 export default {
     deepArrayUpdateKey,
@@ -18,4 +19,5 @@ export default {
     parseParams,
     modifyParams,
     modifyParamsSrc,
+    queryObjKey,
 }
